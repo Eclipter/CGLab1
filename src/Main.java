@@ -48,6 +48,45 @@ public class Main {
                 (int) controller.getgValue(), (int) controller.getbValue()));
     }
 
+    public void changeSlidersForRGB() {
+        sliderR.setValue((int) (controller.getrValue()));
+        sliderG.setValue((int) (controller.getgValue()));
+        sliderB.setValue((int) (controller.getbValue()));
+    }
+
+    public void changeSlidersForHLS() {
+        sliderH.setValue((int) (controller.gethValue() * 360));
+        sliderL.setValue((int) (controller.getlValue() * 100));
+        sliderS.setValue((int) (controller.getsValue() * 100));
+    }
+
+    public void changeSlidersForCMY() {
+        sliderC.setValue((int) (controller.getcValue() * 100));
+        sliderM.setValue((int) (controller.getmValue() * 100));
+        sliderY.setValue((int) (controller.getyValue() * 100));
+    }
+
+    public void changeSlidersForLUV() {
+        sliderLu.setValue((int) (controller.getLuValue()));
+        sliderU.setValue((int) (controller.getuValue() * 100 / 0.6));
+        sliderV.setValue((int) (controller.getvValue() * 100 / 0.6));
+    }
+
+    public void changeTextForAll() {
+        textFieldR.setText(String.valueOf((int) (controller.getrValue())));
+        textFieldG.setText(String.valueOf((int) (controller.getgValue())));
+        textFieldB.setText(String.valueOf((int) (controller.getbValue())));
+        textFieldH.setText(String.valueOf((int) (controller.gethValue() * 360)));
+        textFieldL.setText(String.valueOf((int) (controller.getlValue() * 100)));
+        textFieldS.setText(String.valueOf((int) (controller.getsValue() * 100)));
+        textFieldC.setText(String.valueOf((int) (controller.getcValue() * 100)));
+        textFieldM.setText(String.valueOf((int) (controller.getmValue() * 100)));
+        textFieldY.setText(String.valueOf((int) (controller.getyValue() * 100)));
+        textFieldLu.setText(String.valueOf((int) (controller.getLuValue())));
+        textFieldU.setText(String.valueOf((int) (controller.getuValue() * 100 / 0.6)));
+        textFieldV.setText(String.valueOf((int) (controller.getvValue() * 100 / 0.6)));
+    }
+
     public void recountColorsFromRGB() {
         errorLabel.setText("");
         controller.fromRGBtoHLS();
@@ -55,19 +94,10 @@ public class Main {
         controller.fromXYZtoLUV(controller.fromRGBtoXYZ());
 
         isUserChange = true;
-
-        sliderC.setValue((int) (controller.getcValue() * 100));
-        sliderM.setValue((int) (controller.getmValue() * 100));
-        sliderY.setValue((int) (controller.getyValue() * 100));
-
-        sliderH.setValue((int) (controller.gethValue() * 360));
-        sliderL.setValue((int) (controller.getlValue() * 100));
-        sliderS.setValue((int) (controller.getsValue() * 100));
-
-        sliderLu.setValue((int) (controller.getLuValue()));
-        sliderU.setValue((int) (controller.getuValue() * 100 / 0.6));
-        sliderV.setValue((int) (controller.getvValue() * 100 / 0.6));
-
+        changeSlidersForCMY();
+        changeSlidersForHLS();
+        changeSlidersForLUV();
+        changeTextForAll();
         isUserChange = false;
     }
 
@@ -78,19 +108,10 @@ public class Main {
         controller.fromXYZtoLUV(controller.fromRGBtoXYZ());
 
         isUserChange = true;
-
-        sliderR.setValue((int) (controller.getrValue()));
-        sliderG.setValue((int) (controller.getgValue()));
-        sliderB.setValue((int) (controller.getbValue()));
-
-        sliderH.setValue((int) (controller.gethValue() * 360));
-        sliderL.setValue((int) (controller.getlValue() * 100));
-        sliderS.setValue((int) (controller.getsValue() * 100));
-
-        sliderLu.setValue((int) (controller.getLuValue()));
-        sliderU.setValue((int) (controller.getuValue() * 100 / 0.6));
-        sliderV.setValue((int) (controller.getvValue() * 100 / 0.6));
-
+        changeSlidersForRGB();
+        changeSlidersForHLS();
+        changeSlidersForLUV();
+        changeTextForAll();
         isUserChange = false;
     }
 
@@ -101,19 +122,10 @@ public class Main {
         controller.fromXYZtoLUV(controller.fromRGBtoXYZ());
 
         isUserChange = true;
-
-        sliderR.setValue((int) (controller.getrValue()));
-        sliderG.setValue((int) (controller.getgValue()));
-        sliderB.setValue((int) (controller.getbValue()));
-
-        sliderC.setValue((int) (controller.getcValue() * 100));
-        sliderM.setValue((int) (controller.getmValue() * 100));
-        sliderY.setValue((int) (controller.getyValue() * 100));
-
-        sliderLu.setValue((int) (controller.getLuValue()));
-        sliderU.setValue((int) (controller.getuValue() * 100 / 0.6));
-        sliderV.setValue((int) (controller.getvValue() * 100 / 0.6));
-
+        changeSlidersForRGB();
+        changeSlidersForCMY();
+        changeSlidersForLUV();
+        changeTextForAll();
         isUserChange = false;
     }
 
@@ -128,19 +140,10 @@ public class Main {
         }
 
         isUserChange = true;
-
-        sliderR.setValue((int) (controller.getrValue()));
-        sliderG.setValue((int) (controller.getgValue()));
-        sliderB.setValue((int) (controller.getbValue()));
-
-        sliderH.setValue((int) (controller.gethValue() * 360));
-        sliderL.setValue((int) (controller.getlValue() * 100));
-        sliderS.setValue((int) (controller.getsValue() * 100));
-
-        sliderC.setValue((int) (controller.getcValue() * 100));
-        sliderM.setValue((int) (controller.getmValue() * 100));
-        sliderY.setValue((int) (controller.getyValue() * 100));
-
+        changeSlidersForRGB();
+        changeSlidersForHLS();
+        changeSlidersForCMY();
+        changeTextForAll();
         isUserChange = false;
     }
 
@@ -297,7 +300,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Main");
+        JFrame frame = new JFrame("Ultimate Color Panel");
         frame.setContentPane(new Main().mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
