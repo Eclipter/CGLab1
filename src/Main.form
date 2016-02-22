@@ -55,7 +55,10 @@
                     <maximum-size width="50" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <editable value="false"/>
+                  <toolTipText value="From 0 to 100"/>
+                </properties>
               </component>
               <component id="f127d" class="javax.swing.JTextField" binding="textFieldU">
                 <constraints>
@@ -64,7 +67,10 @@
                     <maximum-size width="50" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <editable value="false"/>
+                  <toolTipText value="From 0 to 100"/>
+                </properties>
               </component>
               <component id="b4785" class="javax.swing.JTextField" binding="textFieldV">
                 <constraints>
@@ -73,7 +79,10 @@
                     <maximum-size width="50" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <editable value="false"/>
+                  <toolTipText value="From 0 to 100"/>
+                </properties>
               </component>
             </children>
           </grid>
@@ -119,7 +128,10 @@
                     <maximum-size width="50" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <editable value="false"/>
+                  <toolTipText value="From 0 to 255"/>
+                </properties>
               </component>
               <component id="b25ec" class="javax.swing.JTextField" binding="textFieldG">
                 <constraints>
@@ -128,7 +140,10 @@
                     <maximum-size width="50" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <editable value="false"/>
+                  <toolTipText value="From 0 to 255"/>
+                </properties>
               </component>
               <component id="1ab49" class="javax.swing.JTextField" binding="textFieldB">
                 <constraints>
@@ -137,7 +152,10 @@
                     <maximum-size width="50" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <editable value="false"/>
+                  <toolTipText value="From 0 to 255"/>
+                </properties>
               </component>
             </children>
           </grid>
@@ -180,7 +198,10 @@
                     <maximum-size width="50" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <editable value="false"/>
+                  <toolTipText value="From 0 to 100"/>
+                </properties>
               </component>
               <component id="d4210" class="javax.swing.JTextField" binding="textFieldM">
                 <constraints>
@@ -189,7 +210,10 @@
                     <maximum-size width="50" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <editable value="false"/>
+                  <toolTipText value="From 0 to 100"/>
+                </properties>
               </component>
               <component id="84acb" class="javax.swing.JTextField" binding="textFieldY">
                 <constraints>
@@ -198,7 +222,10 @@
                     <maximum-size width="50" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <editable value="false"/>
+                  <toolTipText value="From 0 to 100"/>
+                </properties>
               </component>
             </children>
           </grid>
@@ -244,7 +271,10 @@
                     <maximum-size width="50" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <editable value="false"/>
+                  <toolTipText value="From 0 to 360"/>
+                </properties>
               </component>
               <component id="25839" class="javax.swing.JTextField" binding="textFieldL">
                 <constraints>
@@ -253,7 +283,10 @@
                     <maximum-size width="50" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <editable value="false"/>
+                  <toolTipText value="From 0 to 100"/>
+                </properties>
               </component>
               <component id="e13be" class="javax.swing.JTextField" binding="textFieldS">
                 <constraints>
@@ -262,7 +295,10 @@
                     <maximum-size width="50" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <editable value="false"/>
+                  <toolTipText value="From 0 to 100"/>
+                </properties>
               </component>
             </children>
           </grid>
