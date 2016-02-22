@@ -22,6 +22,7 @@ public class Controller {
         gValue = 0;
         bValue = 0;
         fromRGBtoCMY();
+        hValue = 0;
         fromRGBtoHLS();
         fromXYZtoLUV(fromRGBtoXYZ());
     }
@@ -38,7 +39,7 @@ public class Controller {
         bValue = (1 - yValue) * 255;
     }
 
-    public void fromRGBtoHLS() { //Observer. = 2°, Illuminant = D65
+    /*public void fromRGBtoHLS() { //Observer. = 2°, Illuminant = D65
         double varR = rValue / 255;
         double varG = gValue / 255;
         double varB = bValue / 255;
@@ -82,6 +83,35 @@ public class Controller {
                 hValue -= 1;
             }
         }
+    }*/
+
+    public void fromRGBtoHLS() {
+        double varR = rValue / 255;
+        double varG = gValue / 255;
+        double varB = bValue / 255;
+
+        double minValue = Math.min(Math.min(varR, varG), varB);
+        double maxValue = Math.max(Math.max(varR, varG), varB);
+        double delta = maxValue - minValue;
+
+        lValue = (minValue + maxValue) / 2;
+
+        if(maxValue == varR && varG >= varB) {
+            hValue = (varG - varB) / (delta);
+        }
+        else if(maxValue == varR && varG < varB) {
+            hValue = (varG - varB) / (delta) + 6.;
+        }
+        else if(maxValue == varG) {
+            hValue = (varB - varR) / (delta) + 2.;
+        }
+        else if(maxValue == varB) {
+            hValue = (varR - varG) / (delta) + 4.;
+        }
+
+        hValue *= 60;
+
+        sValue = delta / (1 - Math.abs(1 - (maxValue + minValue)));
     }
 
     public void fromHLStoRGB() {
@@ -101,9 +131,11 @@ public class Controller {
 
             double var1 = 2. * lValue - var2;
 
-            rValue = hueFunction(var1, var2, (hValue + (1. / 3.)));
-            gValue = hueFunction(var1, var2, hValue);
-            bValue = hueFunction(var1, var2, (hValue - (1. / 3.)));
+            double varH = hValue / 360;
+
+            rValue = hueFunction(var1, var2, (varH + (1. / 3.)));
+            gValue = hueFunction(var1, var2, varH);
+            bValue = hueFunction(var1, var2, (varH - (1. / 3.)));
 
             rValue *= 255;
             gValue *= 255;
