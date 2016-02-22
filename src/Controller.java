@@ -254,6 +254,12 @@ public class Controller {
 
     public double[] fromLUVtoXYZ() {
         double[] xyz = new double[3];
+        if(vValue == 0) {
+            xyz[0] = 0;
+            xyz[1] = 0;
+            xyz[2] = 0;
+            return xyz;
+        }
         xyz[1] = luValue;
         double eq = 9 * xyz[1] / vValue;
         xyz[0] = uValue * eq / 4;
