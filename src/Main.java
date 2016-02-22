@@ -135,7 +135,7 @@ public class Main {
         controller.fromRGBtoCMY();
         controller.fromRGBtoHLS();
 
-        if(!colorsPure) {
+        if (!colorsPure) {
             errorLabel.setText("Not supported by RGB");
         }
 
@@ -154,153 +154,135 @@ public class Main {
         recountColorsFromRGB();
 
         sliderR.addChangeListener(e -> {
-            if(isUserChange) {
+            if (isUserChange) {
                 return;
             }
             JSlider source = (JSlider) e.getSource();
-            if(!source.getValueIsAdjusting()) {
-                int value = source.getValue();
-                controller.setrValue(value);
-                recountColorsFromRGB();
-                changeBackgroundColor();
-            }
+            int value = source.getValue();
+            controller.setrValue(value);
+            recountColorsFromRGB();
+            changeBackgroundColor();
+
         });
         sliderG.addChangeListener(e -> {
-            if(isUserChange) {
+            if (isUserChange) {
                 return;
             }
             JSlider source = (JSlider) e.getSource();
-            if(!source.getValueIsAdjusting()) {
-                int value = source.getValue();
-                controller.setgValue(value);
-                recountColorsFromRGB();
-                changeBackgroundColor();
-            }
+            int value = source.getValue();
+            controller.setgValue(value);
+            recountColorsFromRGB();
+            changeBackgroundColor();
         });
         sliderB.addChangeListener(e -> {
-            if(isUserChange) {
+            if (isUserChange) {
                 return;
             }
             JSlider source = (JSlider) e.getSource();
-            if(!source.getValueIsAdjusting()) {
-                int value = source.getValue();
-                controller.setbValue(value);
-                recountColorsFromRGB();
-                changeBackgroundColor();
-            }
+            int value = source.getValue();
+            controller.setbValue(value);
+            recountColorsFromRGB();
+            changeBackgroundColor();
         });
         sliderH.addChangeListener(e -> {
-            if(isUserChange) {
+            if (isUserChange) {
                 return;
             }
             JSlider source = (JSlider) e.getSource();
-            if(!source.getValueIsAdjusting()) {
-                int value = source.getValue();
-                controller.sethValue((double) value / 360);
-                recountColorsFromHLS();
-                changeBackgroundColor();
-            }
+            int value = source.getValue();
+            controller.sethValue((double) value / 360);
+            recountColorsFromHLS();
+            changeBackgroundColor();
         });
         sliderL.addChangeListener(e -> {
-            if(isUserChange) {
+            if (isUserChange) {
                 return;
             }
             JSlider source = (JSlider) e.getSource();
-            if(!source.getValueIsAdjusting()) {
-                int value = source.getValue();
-                controller.setlValue((double) value / 100);
-                recountColorsFromHLS();
-                changeBackgroundColor();
-            }
+            int value = source.getValue();
+            controller.setlValue((double) value / 100);
+            recountColorsFromHLS();
+            changeBackgroundColor();
         });
         sliderS.addChangeListener(e -> {
-            if(isUserChange) {
+            if (isUserChange) {
                 return;
             }
             JSlider source = (JSlider) e.getSource();
-            if(!source.getValueIsAdjusting()) {
-                int value = source.getValue();
-                controller.setsValue((double) value / 100);
-                recountColorsFromHLS();
-                changeBackgroundColor();
-            }
+            int value = source.getValue();
+            controller.setsValue((double) value / 100);
+            recountColorsFromHLS();
+            changeBackgroundColor();
         });
         sliderC.addChangeListener(e -> {
-            if(isUserChange) {
+            if (isUserChange) {
                 return;
             }
             JSlider source = (JSlider) e.getSource();
-            if(!source.getValueIsAdjusting()) {
-                int value = source.getValue();
-                controller.setcValue((double) value / 100);
-                recountColorsFromCMY();
-                changeBackgroundColor();
-            }
+            int value = source.getValue();
+            controller.setcValue((double) value / 100);
+            recountColorsFromCMY();
+            changeBackgroundColor();
         });
         sliderM.addChangeListener(e -> {
-            if(isUserChange) {
+            if (isUserChange) {
                 return;
             }
             JSlider source = (JSlider) e.getSource();
-            if(!source.getValueIsAdjusting()) {
-                int value = source.getValue();
-                controller.setmValue((double) value / 100);
-                recountColorsFromCMY();
-                changeBackgroundColor();
-            }
+            int value = source.getValue();
+            controller.setmValue((double) value / 100);
+            recountColorsFromCMY();
+            changeBackgroundColor();
         });
         sliderY.addChangeListener(e -> {
-            if(isUserChange) {
+            if (isUserChange) {
                 return;
             }
             JSlider source = (JSlider) e.getSource();
-            if(!source.getValueIsAdjusting()) {
-                int value = source.getValue();
-                controller.setyValue((double) value / 100);
-                recountColorsFromCMY();
-                changeBackgroundColor();
-            }
+            int value = source.getValue();
+            controller.setyValue((double) value / 100);
+            recountColorsFromCMY();
+            changeBackgroundColor();
         });
         sliderLu.addChangeListener(e -> {
-            if(isUserChange) {
+            if (isUserChange) {
                 return;
             }
             JSlider source = (JSlider) e.getSource();
-            if(!source.getValueIsAdjusting()) {
-                int value = source.getValue();
-                controller.setLuValue((double) value);
-                recountColorsFromLUV();
-                changeBackgroundColor();
-            }
+            int value = source.getValue();
+            controller.setLuValue((double) value);
+            recountColorsFromLUV();
+            changeBackgroundColor();
         });
         sliderU.addChangeListener(e -> {
-            if(isUserChange) {
+            if (isUserChange) {
                 return;
             }
             JSlider source = (JSlider) e.getSource();
-            if(!source.getValueIsAdjusting()) {
-                int value = source.getValue();
-                controller.setuValue((double) value / 100 * 0.6);
-                recountColorsFromLUV();
-                changeBackgroundColor();
-            }
+            int value = source.getValue();
+            controller.setuValue((double) value / 100 * 0.6);
+            recountColorsFromLUV();
+            changeBackgroundColor();
         });
         sliderV.addChangeListener(e -> {
-            if(isUserChange) {
+            if (isUserChange) {
                 return;
             }
             JSlider source = (JSlider) e.getSource();
-            if(!source.getValueIsAdjusting()) {
-                int value = source.getValue();
-                controller.setvValue((double) value / 100 * 0.6);
-                recountColorsFromLUV();
-                changeBackgroundColor();
-            }
+            int value = source.getValue();
+            controller.setvValue((double) value / 100 * 0.6);
+            recountColorsFromLUV();
+            changeBackgroundColor();
         });
     }
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Ultimate Color Panel");
+        /*try {
+            UIManager.setLookAndFeel("com.seaglasslookandfeel.SeaGlassLookAndFeel");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }*/
         frame.setContentPane(new Main().mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
