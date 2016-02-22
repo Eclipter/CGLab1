@@ -55,7 +55,7 @@ public class Main {
     }
 
     public void changeSlidersForHLS() {
-        sliderH.setValue((int) (controller.gethValue() * 360));
+        sliderH.setValue((int) (controller.gethValue()));
         sliderL.setValue((int) (controller.getlValue() * 100));
         sliderS.setValue((int) (controller.getsValue() * 100));
     }
@@ -76,7 +76,7 @@ public class Main {
         textFieldR.setText(String.valueOf((int) (controller.getrValue())));
         textFieldG.setText(String.valueOf((int) (controller.getgValue())));
         textFieldB.setText(String.valueOf((int) (controller.getbValue())));
-        textFieldH.setText(String.valueOf((int) (controller.gethValue() * 360)));
+        textFieldH.setText(String.valueOf((int) (controller.gethValue())));
         textFieldL.setText(String.valueOf((int) (controller.getlValue() * 100)));
         textFieldS.setText(String.valueOf((int) (controller.getsValue() * 100)));
         textFieldC.setText(String.valueOf((int) (controller.getcValue() * 100)));
@@ -190,7 +190,7 @@ public class Main {
             }
             JSlider source = (JSlider) e.getSource();
             int value = source.getValue();
-            controller.sethValue((double) value / 360);
+            controller.sethValue((double) value);
             recountColorsFromHLS();
             changeBackgroundColor();
         });
